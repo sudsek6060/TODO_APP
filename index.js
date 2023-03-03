@@ -20,11 +20,15 @@ const markup = function (){
 addBtn.addEventListener('click', function(e){
     e.preventDefault();
     
-   
-    const html = markup()
+    let html = markup()
     
+    // display todo
     container.insertAdjacentHTML('afterbegin', html);
 
+    // empty the input
+    input.value = '';
+
+    // Delete TODO
     var current_tasks = document.querySelectorAll(".deleteButton");
         for(var i=0; i<current_tasks.length; i++){
             current_tasks[i].onclick = function(){
